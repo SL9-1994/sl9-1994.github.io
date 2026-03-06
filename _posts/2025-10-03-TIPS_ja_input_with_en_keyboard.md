@@ -1,0 +1,35 @@
+---
+title: tips:💡 英語配列でIME日本語入力を動作させる
+date: 2025-10-03 12:00:00 +0900
+categories: [Environment]
+tags: [windows_11]
+---
+
+
+## 導入環境
+
+- 物理キーボード: テンキーなし日本語配列(105, 106)
+- OS: Windows11 home
+
+## キーマッピングの変更
+
+`時刻と言語>言語と地域`から日本語パッケージの右側にある三点リーダーから，`言語のオプション`を選択します．<br>
+
+![ja_to_en_01](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_03.png)
+
+下にあるキーボードレイアウトから，`英語キーボード(101/102キー)`を選択し，デバイスを再起動します．<br>
+
+![ja_to_en_02](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_04.png)
+
+次に，`時刻と言語>入力>キーボードの詳細設定`の，入力言語のホットキーから，`キーシーケンスの変更`を行い，割り当てを無効化してください．
+
+![ja_to_en_03](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_05.png)
+
+
+最後に，`時刻と言語>言語と地域>Microsoft IME>キーとタッチとカスタマイズ`から，ctrl + spaceに`IME-オン/オフ`を設定すれば完了です．
+
+![ja_to_en_04](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_01.png)
+
+> ※ このIME切り替えを行うためには，ctrl+iで設定を開き，`時刻と言語>言語と地域>Microsoft IME>全般`から下記の画像のように最新バージョンのIMEを使用する必要があります．
+
+![ja_to_en_05](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_02.png)
