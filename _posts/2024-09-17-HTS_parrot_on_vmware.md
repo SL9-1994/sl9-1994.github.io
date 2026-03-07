@@ -2,7 +2,7 @@
 title: VMwareに対してのParrotOSの導入方法
 date: 2024-09-16 12:00:00 +0900
 categories: [Linux]
-tags: [how_to]
+tags: [security_os]
 ---
 
 ## 環境
