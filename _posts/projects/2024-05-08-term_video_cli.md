@@ -52,8 +52,6 @@ FFmpeg の Rust 用 Wrapper Crate を使用しようと思ったのですが，B
 
 > completed
 
-[View Source](https://github.com/SL9-1994/term_video_cli)
-
 ## History
 
 - 2025/05/07: rusty_ytdl を依存関係から削除し，Youtube のダウンロード機能を廃止(-u オプション)

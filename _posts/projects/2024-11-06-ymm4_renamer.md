@@ -52,11 +52,8 @@ TotalMilliseconds : 129.4819
 
 ### 対応フォーマット
 
-1. [旧きつねゆっくり](http://www.nicotalk.com/charasozai_kt.html)  
-   新フォーマットの対応要望がある場合は，Github-Issue 又は Bluesky の DM に対して要望を記載してもらえると助かります．
+1. 旧きつねゆっくり
 
 ## Status
 
 > completed
-
-[View Source](https://github.com/SL9-1994/ymm4_renamer)
