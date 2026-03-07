@@ -1,5 +1,5 @@
 ---
-title: FIX:🚑 WSL2上のNeovimで，コピー&ペーストができない問題"
+title: FIX:🚑 WSL2上のNeovimで，コピー&ペーストができない問題
 date: 2025-10-06 12:00:00 +0900
 categories: [Environment]
 tags: [text_editor, wsl2]
