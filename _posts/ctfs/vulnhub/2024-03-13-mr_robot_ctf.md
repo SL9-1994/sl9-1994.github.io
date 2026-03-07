@@ -2,7 +2,7 @@
 title: FEAT:🚩 Mr Robot CTF
 date: 2024-03-13 12:00:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [web]
+tags: [web, vulnhub]
 ---
 
 ## はじめに

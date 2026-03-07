@@ -2,7 +2,7 @@
 title: ENV:🧱 Arch LinuxのWSL2内環境構築 
 date: 2025-11-25 12:00:00 +0900
 categories: [Infrastructure & OS]
-tags: [web]
+tags: [arch, wsl]
 ---
 
 ## WSL2のインストール

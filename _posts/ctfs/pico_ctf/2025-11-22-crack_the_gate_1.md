@@ -2,7 +2,7 @@
 title: FEAT:🚩 picoMini by CMU-Africa「Crack the Gate」Medium
 date: 2025-11-22 12:00:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [web]
+tags: [web, pico_ctf]
 ---
 
 - Challenge: Crack the Gate 1

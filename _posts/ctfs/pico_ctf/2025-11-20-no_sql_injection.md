@@ -2,7 +2,7 @@
 title: FEAT:🚩 Pico CTF 2024「No SQL Injection」Medium
 date: 2025-11-20 12:00:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [web]
+tags: [web, pico_ctf]
 ---
 
 - Challenge: No Sql Injection

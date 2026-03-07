@@ -2,7 +2,7 @@
 title: FEAT:🚩 Pico CTF 2025 Medium
 date: 2025-09-09 12:00:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [web]
+tags: [web, pico_ctf]
 ---
 
 ## picoCTF 2025 Level: `Medium`
