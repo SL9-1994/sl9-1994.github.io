@@ -1,7 +1,7 @@
 ---
-title: feat:🚩 Pico CTF 2025 Medium
+title: FEAT:🚩 Pico CTF 2025 Medium
 date: 2025-09-09 12:00:00 +0900
-categories: [CTF, PicoCTF, PicoCTF_2025]
+categories: [CyberSecurity, CTF]
 tags: [web]
 ---
 

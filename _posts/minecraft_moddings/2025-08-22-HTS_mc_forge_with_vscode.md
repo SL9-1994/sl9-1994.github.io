@@ -1,5 +1,5 @@
 ---
-title: VScodeを用いたMinecraft Forge開発環境構築
+title: ENV:📦 VScodeを用いたMinecraft Forge開発環境構築
 date: 2025-08-22 12:00:00 +0900
 categories: [MinecraftModding]
 tags: [forge_1.21.4]

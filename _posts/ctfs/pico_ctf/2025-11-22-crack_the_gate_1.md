@@ -1,7 +1,7 @@
 ---
-title: feat:🚩 picoMini by CMU-Africa「Crack the Gate」Medium
+title: FEAT:🚩 picoMini by CMU-Africa「Crack the Gate」Medium
 date: 2025-11-22 12:00:00 +0900
-categories: [CTF, PicoCTF, PicoMini_CMU_africa]
+categories: [CyberSecurity, CTF]
 tags: [web]
 ---
 

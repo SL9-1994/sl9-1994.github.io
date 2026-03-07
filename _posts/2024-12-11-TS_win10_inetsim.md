@@ -1,8 +1,8 @@
 ---
-title: fix:🚑 Windows10 Inetsimが正常に動作しない
+title: FIX:🚑 Windows10 Inetsimが正常に動作しない
 date: 2025-08-19 12:00:00 +0900
-categories: [MalwareAnalysis]
-tags: []
+categories: [CyberSecurity, MalwareAnalysis]
+tags: [inetsim]
 ---
 
 ## 発生した問題

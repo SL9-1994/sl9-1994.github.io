@@ -1,5 +1,5 @@
 ---
-title: tips:💡 NeoForgeでパーティクルの描画範囲を拡張
+title: TIPS:💡 NeoForgeでパーティクルの描画範囲を拡張
 date: 2025-08-30 12:00:00 +0900
 categories: [MinecraftModding]
 tags: [neoforge_1.21.4]

@@ -1,7 +1,7 @@
 ---
-title: tips:💡 英語配列でIME日本語入力を動作させる
+title: TIPS:💡 英語配列でIME日本語入力を動作させる
 date: 2025-10-03 12:00:00 +0900
-categories: [Environment]
+categories: [Infrastructure & OS]
 tags: [windows_11]
 ---
 

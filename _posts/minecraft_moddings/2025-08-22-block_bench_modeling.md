@@ -1,5 +1,5 @@
 ---
-title: feat:✨ 葬送のフリーレンの杖をモデリングしてみた
+title: FEAT:✨ 葬送のフリーレンの杖をモデリングしてみた
 date: 2025-08-22 12:00:00 +0900
 categories: [MinecraftModding]
 tags: [modeling]

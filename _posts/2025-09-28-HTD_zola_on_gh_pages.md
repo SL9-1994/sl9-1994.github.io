@@ -1,7 +1,7 @@
 ---
-title: Zola SSGのGithub Pagesデプロイ方法
+title: ENV:🧱 Zola SSGのGithub Pagesデプロイ方法
 date: 2025-09-28 12:00:00 +0900
-categories: [SSG]
+categories: [Infrastructure & OS]
 tags: [deploy]
 ---
 

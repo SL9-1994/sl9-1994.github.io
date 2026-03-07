@@ -1,7 +1,7 @@
 ---
-title: feat:🚩 Pico CTF 2024「No SQL Injection」Medium
+title: FEAT:🚩 Pico CTF 2024「No SQL Injection」Medium
 date: 2025-11-20 12:00:00 +0900
-categories: [CTF, PicoCTF, PicoCTF_2024]
+categories: [CyberSecurity, CTF]
 tags: [web]
 ---
 

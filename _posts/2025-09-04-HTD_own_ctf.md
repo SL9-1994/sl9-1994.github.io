@@ -1,7 +1,7 @@
 ---
-title: EC2の無料枠を用いてCTFプラットフォームを構築
+title: ENV:🧱 EC2の無料枠を用いてCTFプラットフォームを構築
 date: 2025-09-04 12:00:00 +0900
-categories: [CTF]
+categories: [Infrastructure & OS]
 tags: [deploy]
 ---
 

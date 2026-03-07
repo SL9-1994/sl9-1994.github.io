@@ -1,5 +1,5 @@
 ---
-title: VScode for Edcationを体験！
+title: STUDY:🔍 VScode for Edcationを体験！
 date: 2024-06-02 12:00:00 +0900
 categories: [Learning]
 tags: []

@@ -1,7 +1,7 @@
 ---
-title: WSL2 ubuntu 24.04のアーカイブミラーサーバーを変更
+title: ENV:🧱 WSL2 ubuntu 24.04のアーカイブミラーサーバーを変更
 date: 2025-09-05 12:00:00 +0900
-categories: [Linux]
+categories: [Infrastructure & OS]
 tags: []
 ---
 

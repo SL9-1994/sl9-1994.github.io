@@ -1,7 +1,7 @@
 ---
-title: RaspberryPI3 modelBにRaspberryOSを導入
+title: ENV:🧱 RaspberryPI3 modelBにRaspberryOSを導入
 date: 2025-09-16 12:00:00 +0900
-categories: []
+categories: [Infrastructure & OS]
 tags: [raspberry_pi]
 ---
 
