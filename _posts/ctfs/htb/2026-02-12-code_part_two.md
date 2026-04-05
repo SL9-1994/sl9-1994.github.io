@@ -1,5 +1,6 @@
 ---
 title: FEAT:🚩 HTB「Code Part Two」Easy
+description: Easy, Linux, Web
 date: 2026-02-12 12:00:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [web, hack_the_box]
