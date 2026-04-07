@@ -1,0 +1,156 @@
+---
+title: FEAT:🚩 HTB「VariaType」Medium
+description: Easy, Linux
+date: 2026-04-07 17:30:00 +0900
+categories: [CyberSecurity, CTF]
+tags: [hack_the_box, linux]
+image:
+  path: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/1c63aff74baeaf6afdb5f35519756ab1.png
+  alt: logo
+---
+
+> このマシンは `2026/04/07` 現在アクティブです．解法の共有は禁止されています．
+{: .prompt-info }
+
+## Reconnaissance & Initial Enumeration
+
+**ssh** と **http nginx** のシンプルなサービスが動作しています．
+
+**ポートスキャン**
+```shell
+$ nmap variatype.htb -p- -sV  --min-rate 1000
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-04-06 20:37 +0900
+Nmap scan report for variatype.htb (10.129.244.202)
+Host is up (0.14s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)
+80/tcp open  http    nginx 1.22.1
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 77.36 seconds
+```
+
+存在しないVHOSTでのレスポンスサイズ (`Content-Length: 169`) でフィルタリングします．
+`portal` という仮想ホスト (`VHOST`) を発見しました．`/etc/hosts` に追加しておきます．
+
+**VHOST & サブドメイン探索**
+```shell
+$ curl -s -i -H "Host: xxx.variatype.htb" http://variatype.htb
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.22.1
+Date: Tue, 07 Apr 2026 01:59:33 GMT
+Content-Type: text/html
+Content-Length: 169
+Connection: keep-alive
+Location: http://variatype.htb/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
+
+
+$ ffuf -u http://variatype.htb -H "Host: FUZZ.variatype.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -fs 169 -t 200
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://variatype.htb
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+ :: Header           : Host: FUZZ.variatype.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 169
+________________________________________________
+
+portal                  [Status: 200, Size: 2494, Words: 445, Lines: 59, Duration: 146ms]
+:: Progress: [20000/20000] :: Job [1/1] :: 1517 req/sec :: Duration: [0:00:13] :: Errors: 0 ::
+
+
+$ ffuf -u http://FUZZ.variatype.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -mc all -ac
+# None
+```
+
+**ディレクトリ探索**
+```shell
+$ feroxbuster -u http://variatype.htb -w /usr/share/seclists/Discovery/Web-Content/common.txt -C 404,400 -t 50
+by Ben "epi" Risher 🤓                 ver: 2.13.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://variatype.htb/
+ 🚩  In-Scope Url          │ variatype.htb
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/common.txt
+ 💢  Status Code Filters   │ [404, 400]
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.13.1
+ 🔎  Extract Links         │ true
+ 🏁  HTTP methods          │ [GET]
+ 🔃  Recursion Depth       │ 4
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+404      GET        5l       31w      207c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+200      GET       84l      304w     3339c http://variatype.htb/services
+200      GET      250l      501w     5030c http://variatype.htb/static/css/corporate.css
+200      GET       65l      166w     2104c http://variatype.htb/tools/variable-font-generator
+200      GET       60l      215w     2321c http://variatype.htb/
+[####################] - 14s     4758/4758    0s      found:4       errors:1      
+[####################] - 14s     4752/4752    337/s   http://variatype.htb/      
+
+
+$ feroxbuster -u http://portal.variatype.htb -w /usr/share/seclists/Discovery/Web-Content/common.txt -C 404,400 -t 50
+by Ben "epi" Risher 🤓                 ver: 2.13.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://portal.variatype.htb/
+ 🚩  In-Scope Url          │ portal.variatype.htb
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/common.txt
+ 💢  Status Code Filters   │ [404, 400]
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.13.1
+ 🔎  Extract Links         │ true
+ 🏁  HTTP methods          │ [GET]
+ 🔃  Recursion Depth       │ 4
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+404      GET        7l       11w      153c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+301      GET        7l       11w      169c http://portal.variatype.htb/.git => http://portal.variatype.htb/.git/
+200      GET        2l        5w      187c http://portal.variatype.htb/.git/index
+200      GET        1l        2w       23c http://portal.variatype.htb/.git/HEAD
+200      GET        8l       21w      143c http://portal.variatype.htb/.git/config
+403      GET        7l        9w      153c http://portal.variatype.htb/.git/logs/
+200      GET      369l      818w     8789c http://portal.variatype.htb/styles.css
+200      GET       58l      200w     2494c http://portal.variatype.htb/
+301      GET        7l       11w      169c http://portal.variatype.htb/files => http://portal.variatype.htb/files/
+200      GET       58l      200w     2494c http://portal.variatype.htb/index.php
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/hooks => http://portal.variatype.htb/.git/hooks/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/info => http://portal.variatype.htb/.git/info/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/logs => http://portal.variatype.htb/.git/logs/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/objects => http://portal.variatype.htb/.git/objects/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/objects/03 => http://portal.variatype.htb/.git/objects/03/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/objects/50 => http://portal.variatype.htb/.git/objects/50/
+200      GET        6l       43w      240c http://portal.variatype.htb/.git/info/exclude
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/objects/info => http://portal.variatype.htb/.git/objects/info/
+301      GET        7l       11w      169c http://portal.variatype.htb/.git/objects/pack => http://portal.variatype.htb/.git/objects/pack/
+[####################] - 33s    52276/52276   0s      found:18      errors:3      
+[####################] - 15s     4752/4752    320/s   http://portal.variatype.htb/ 
+[####################] - 14s     4752/4752    333/s   http://portal.variatype.htb/.git/ 
+[####################] - 14s     4752/4752    334/s   http://portal.variatype.htb/.git/logs/ 
+[####################] - 14s     4752/4752    333/s   http://portal.variatype.htb/files/ 
+[####################] - 15s     4752/4752    326/s   http://portal.variatype.htb/.git/hooks/ 
+[####################] - 14s     4752/4752    329/s   http://portal.variatype.htb/.git/info/ 
+[####################] - 14s     4752/4752    332/s   http://portal.variatype.htb/.git/objects/ 
+[####################] - 14s     4752/4752    334/s   http://portal.variatype.htb/.git/objects/03/ 
+[####################] - 14s     4752/4752    329/s   http://portal.variatype.htb/.git/objects/50/ 
+[####################] - 15s     4752/4752    327/s   http://portal.variatype.htb/.git/objects/info/ 
+[####################] - 14s     4752/4752    339/s   http://portal.variatype.htb/.git/objects/pack/
+```

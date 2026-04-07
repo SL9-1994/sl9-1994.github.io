@@ -5,7 +5,7 @@ date: 2026-02-12 12:00:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [web, hack_the_box]
 image:
-  path: /assets/img/ctf/htb/2026-02-12-htb-code_part_two-logo.png
+  path: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/ea23d7bc12459ef0c3db19067f02352a.png
   alt: logo
 ---
 
