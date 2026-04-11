@@ -1,6 +1,6 @@
 ---
 title: FEAT:🚩 HTB「VariaType」Medium
-description: Easy, Linux
+description: Easy, Medium
 date: 2026-04-07 17:30:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [hack_the_box, linux]
