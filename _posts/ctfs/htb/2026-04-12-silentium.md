@@ -1,0 +1,90 @@
+---
+title: FEAT:🚩 HTB「Silentium」Easy
+description: Medium, Linux
+date: 2026-04-12 20:00:00 +0900
+categories: [CyberSecurity, CTF]
+tags: [hack_the_box, linux]
+image:
+  path: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/601d72b592e6b78aee56dbc086ec7089.png
+  alt: logo
+---
+
+> このマシンは `2026/04/12` 現在アクティブです．解法の共有は禁止されています．
+{: .prompt-info }
+
+## Reconnaissance & Initial Enumeration
+
+`staging` という **VHOST** を発見しました．
+`80: nginx` には，**規制対応型の機関投資向けプラットフォーム** が動作しています，また，**Institutional Leadership.** の項目には **Marcus Thorne, Ben, Elena Rossi** という各責任者の名前が記載されています．
+
+![silentium-01](/assets/img/ctf/htb/2026-04-12-silentium-01.jpeg)
+
+```shell
+$ echo '10.129.196.179 silentium.htb' | sudo tee -a /etc/hosts
+10.129.196.179 silentium.htb
+
+$ nmap silentium.htb -p- -sV --min-rate 1000                 
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-04-12 13:01 +0900
+Nmap scan report for silentium.htb (10.129.196.179)
+Host is up (0.13s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    nginx 1.24.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 72.10 seconds
+
+
+$ ffuf -u http://silentium.htb -H "Host: FUZZ.silentium.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -fs 178 -t 200
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://silentium.htb
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+ :: Header           : Host: FUZZ.silentium.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 178
+________________________________________________
+
+staging                 [Status: 200, Size: 3142, Words: 789, Lines: 70, Duration: 155ms]
+:: Progress: [20000/20000] :: Job [1/1] :: 1503 req/sec :: Duration: [0:00:13] :: Errors: 0 ::
+
+
+$ feroxbuster -u http://silentium.htb -w /usr/share/seclists/Discovery/Web-Content/common.txt -C 404,400 -t 50 
+by Ben "epi" Risher 🤓                 ver: 2.13.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://silentium.htb/
+ 🚩  In-Scope Url          │ silentium.htb
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/common.txt
+ 💢  Status Code Filters   │ [404, 400]
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.13.1
+ 🔎  Extract Links         │ true
+ 🏁  HTTP methods          │ [GET]
+ 🔃  Recursion Depth       │ 4
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+200      GET      251l      725w     8753c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+301      GET        7l       12w      178c http://silentium.htb/assets => http://silentium.htb/assets/
+[####################] - 44s    52272/52272   0s      found:1       errors:0      
+[####################] - 28s     4752/4752    168/s   http://silentium.htb/ 
+[####################] - 27s     4752/4752    178/s   http://silentium.htb/.git/logs/ 
+[####################] - 30s     4752/4752    161/s   http://silentium.htb/assets/ 
+[####################] - 30s     4752/4752    160/s   http://silentium.htb/assets/.git/logs/ 
+[####################] - 31s     4752/4752    154/s   http://silentium.htb/.git/logs/cgi-bin/ 
+[####################] - 29s     4752/4752    162/s   http://silentium.htb/cgi-bin/ 
+[####################] - 29s     4752/4752    163/s   http://silentium.htb/cgi-bin/.git/logs/ 
+[####################] - 29s     4752/4752    164/s   http://silentium.htb/assets/cgi-bin/ 
+[####################] - 28s     4752/4752    171/s   http://silentium.htb/cgi-bin/cgi-bin/ 
+[####################] - 26s     4752/4752    184/s   http://silentium.htb/assets/cgi-bin/cgi-bin/ 
+[####################] - 25s     4752/4752    194/s   http://silentium.htb/cgi-bin/cgi-bin/cgi-bin/
+```
