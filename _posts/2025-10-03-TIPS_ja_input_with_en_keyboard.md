@@ -31,5 +31,6 @@ tags: [windows_11]
 ![ja_to_en_04](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_01.png)
 
 > ※ このIME切り替えを行うためには，ctrl+iで設定を開き，`時刻と言語>言語と地域>Microsoft IME>全般`から下記の画像のように最新バージョンのIMEを使用する必要があります．
+> **2026/04/12 追記**: 過去のIMEでも，`詳細設定>編集操作>キー設定` から，好きなキーの `入力/変換済み文字なし` に `IME-オン/オフ`　を設定すれば可能です．
 
 ![ja_to_en_05](/assets/img/2025/how_to_setup_ja_input_with_en_Keyboard_02.png)
