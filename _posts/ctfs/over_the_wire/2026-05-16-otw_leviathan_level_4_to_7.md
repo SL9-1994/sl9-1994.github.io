@@ -33,15 +33,10 @@ RELRO           STACK CANARY      NX            PIE             RPATH      RUNPA
 Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   41 Symbols        No    0      1./bin
 
 leviathan4@leviathan:~/.trash$ ./bin
-00110000 01100100 01111001 01111000 01010100 00110111 01000110 00110100 01010001 01000100 00001010
+<confidential>
 ```
 
-`bin` バイナリが出力した2進数をAsciiに変換すると `0dyxT7F4QD` となります．
-
-<details>
-<summary>Level5 Password</summary>
-0dyxT7F4QD
-</details>
+`bin` バイナリが出力した2進数をAsciiに変換することでパスワード入手となります．
 
 ## Level 5 -> 6
 
@@ -77,13 +72,7 @@ exit(-1 <no return ...>
 leviathan5@leviathan:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
 
 leviathan5@leviathan:~$ ./leviathan5
-szo7HDB88w
 ```
-
-<details>
-<summary>Level6 Password</summary>
-szo7HDB88w
-</details>
 
 ## Level 6 -> 7
 
@@ -106,24 +95,18 @@ RELRO           STACK CANARY      NX            PIE             RPATH      RUNPA
 Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   43 Symbols        No    0      1leviathan6
 ```
 
-ghidraでデコンパイルすると，`0x1bd3` と入力された数値が一致しているかを確かめていました．`0x1bd3` は `7123` なため，入力するとパスワード入手できました．
+ghidraでデコンパイルすると，`<confidential>` と入力された数値が一致しているかを確かめていました．`<confidential>` は `<confidential>` なため，入力するとパスワード入手できました．
 
 ```shell
 $ scp -P 2223 leviathan6@leviathan.labs.overthewire.org:/home/leviathan6/leviathan6 ./
 
-leviathan6@leviathan:~$ ./leviathan6 7123
+leviathan6@leviathan:~$ ./leviathan6 <confidential>
 
 $ whoami
 leviathan7
 
 $ cat /etc/leviathan_pass/leviathan7
-qEs5Io5yM8
 ```
-
-<details>
-<summary>Level7 Password</summary>
-qEs5Io5yM8
-</details>
 
 ## Level 7 (Clear)
 

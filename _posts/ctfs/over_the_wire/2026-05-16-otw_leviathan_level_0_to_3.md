@@ -21,13 +21,8 @@ leviathan0@leviathan:~/.backup$ la
 bookmarks.html
 
 leviathan0@leviathan:~/.backup$ cat bookmarks.html | grep leviathan
-<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is 3QJ3TgzHDq" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
+<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is <confidential>" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
 ```
-
-<details>
-<summary>Level1 Password</summary>
-3QJ3TgzHDq
-</details>
 
 ## Level 1 -> 2
 
@@ -72,7 +67,7 @@ Wrong password, Good Bye ...
 **strings** コマンドの出力に `strcmp` があり，`password:` に入力した文字列を比較していると推測します．
 **strings** では比較対象の文字列を取得できなかったので，**ltrace** を用います．
 
-このプログラムは，入力の先頭3文字を切り出して，`sex` という文字列と比較していることがわかりました．
+このプログラムは，入力の先頭3文字を切り出して，文字列と比較していることがわかりました．
 
 ```shell
 leviathan1@leviathan:~$ ltrace ./check
@@ -82,25 +77,19 @@ getchar(0, 0, 0x786573, 0x646f67password: test
 )                                         = 116
 getchar(0, 116, 0x786573, 0x646f67)                                       = 101
 getchar(0, 0x6574, 0x786573, 0x646f67)                                    = 115
-strcmp("tes", "sex")                                                      = 1
+strcmp("tes", "<confidential>")                                                      = 1
 puts("Wrong password, Good Bye ..."Wrong password, Good Bye ...
 )                                      = 29
 +++ exited (status 0) +++
 
 leviathan1@leviathan:~$ ./check
-password: sex
+password: <confidential>
 
 $ whoami
 leviathan2
 
 $ cat /etc/leviathan_pass/leviathan2
-NsN1HwFoyN
 ```
-
-<details>
-<summary>Level2 Password</summary>
-NsN1HwFoyN
-</details>
 
 ### ltrace とは
 
@@ -297,13 +286,7 @@ $ whoami
 leviathan3
 
 $ cat /etc/leviathan_pass/leviathan3
-f0n8h2iWLP
 ```
-
-<details>
-<summary>Level3 Password</summary>
-f0n8h2iWLP
-</details>
 
 ## Level 3 -> 4
 
@@ -327,7 +310,7 @@ RELRO           STACK CANARY      NX            PIE             RPATH      RUNPA
 Partial RELRO   Canary found      NX enabled    No PIE          No RPATH   No RUNPATH   47 Symbols        No    0      2level3
 ```
 
-入力した文字列が，`snlprintf` と一致していればシェルが返るようです．
+入力した文字列が一致していればシェルが返るようです．
 
 ```shell
 leviathan3@leviathan:~$ ltrace ./level3
@@ -336,7 +319,7 @@ strcmp("h0no33", "kakaka")                                                = -1
 printf("Enter the password> ")                                            = 20
 fgets(Enter the password>
 "\n", 256, 0xf7fab5c0)                                              = 0xffffd24c
-strcmp("\n", "snlprintf\n")                                               = -1
+strcmp("\n", "<confidential>\n")                                               = -1
 puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
 )                                                = 19
 +++ exited (status 0) +++
@@ -344,17 +327,11 @@ puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
 
 ```shell
 leviathan3@leviathan:~$ ./level3
-Enter the password> snlprintf
+Enter the password> <confidential>
 [You've got shell]!
 
 $ whoami
 leviathan4
 
 $ cat /etc/leviathan_pass/leviathan4
-WG1egElCvO
 ```
-
-<details>
-<summary>Level4 Password</summary>
-WG1egElCvO
-</details>
