@@ -2,7 +2,7 @@
 title: FEAT:🚩 OverTheWire 「Leviathan | Level 0 -> 3」
 date: 2026-05-16 15:45:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [over_the_wire, linux]
+tags: [over_the_wire, linux, rev]
 ---
 
 > [OverTheWire leviathan](https://overthewire.org/wargames/leviathan/)
