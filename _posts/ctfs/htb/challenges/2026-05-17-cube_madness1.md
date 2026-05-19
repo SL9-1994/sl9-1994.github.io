@@ -6,6 +6,8 @@ categories: [CyberSecurity, CTF]
 tags: [rev, hack_the_box, windows, game_pwn]
 ---
 
+# 20260517-htb-chall-gamepwn-veryeasy-CubeMadness1
+
 初めての，GamaPwnでした．
 
 - **DnSpy v6.5.1 64-bit .NET**
