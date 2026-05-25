@@ -1,5 +1,6 @@
 ---
 title: FEAT:🚩 Daily-AlpacaHack 「Catrunner」Easy
+description: Pythonの仕様を利用したPath Traversal
 date: 2026-05-25 20:03:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [daily_alpaca_hack, linux, misc]
@@ -7,11 +8,11 @@ tags: [daily_alpaca_hack, linux, misc]
 
 # 20260525-daily_alpaca-misc-Catrunner
 
-> [!info] Challenge Info
 > - **Category**: misc
 > - **Description**: Path Traversal
 > - **Tech Stack**: Python
 > - **Flag**: `{*** REDACTED ***}`
+{: .prompt-info }
 
 **階層構造**
 ```
