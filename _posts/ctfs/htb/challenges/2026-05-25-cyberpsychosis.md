@@ -1,10 +1,18 @@
+---
+title: FEAT:🚩 HTB「Cyberpsychosis」Easy
+description: RootKitの解除
+date: 2026-06-25 13:05:00 +0900
+categories: [CyberSecurity, CTF]
+tags: [rev, hack_the_box, rootkit]
+---
+
 # 20260524-htb-chall-rev-easy-Cyberpsychosis
 
-> [!info] Challenge Info
 > - **Category**: Rev
 > - **Description**: 悪意のある攻撃者が私たちのシステムに侵入し，カスタム ルートキットを埋め込んだと考えられます．ルートキットを解除して隠しデータを見つけることはできますか？
 > - **Tech Stack**: LKM
 > - **Flag**: `<credentials>`
+{: .prompt-info }
 
 **階層構造**
 ```
@@ -64,8 +72,8 @@ Rootkitを解除するために，README[^1] のUninstallセクションを読�
 削除するためにはモジュールを表示する必要があります．しかし，モジュールはデフォルトで非表示になっているようなので，サーバに接続し，表示と解除を試みます．
 `kill -63 0` を実行すると，**initプロセスの停止によるKernel Panic** が起きました．
 
-> [!info]
 > 通常のLinuxでは `kill -63 0` で init は死にませんが，この問題の環境 (QEMU) ではシェルと init が同グループに近い扱いになっており，ルートキットをスルーしたリアルタイムシグナルが `init` に直撃したためカーネルパニックが誘発されたものと思われます．
+{: .prompt-info }
 
 本来では `PID 0` に `SIGNAL 63` を送信した際に，RootKitが呼び出しをフックし，シグナルに準拠した処理を割り込ませるはずです．
 これにより，元のソースコードが変更されており，デフォルトのキルスイッチでは解除ができないと分かりました．
