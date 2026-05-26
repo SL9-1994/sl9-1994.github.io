@@ -13,7 +13,7 @@ tags: [daily_alpaca_hack, linux, pwn]
 > - **Keyword**: `Out-of-Bounds Read`
 > - **Tech Stack**: C, nasm
 > - **Release**: 2025-05-06
-> - **Flag**: `Alpaca{retaddr_with_out_of_bounds_function_pointer}`
+> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**
