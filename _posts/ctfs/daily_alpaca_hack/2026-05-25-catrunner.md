@@ -57,9 +57,11 @@ else:
 
 ### `os.path.join` の仕様を利用した **PathTraversal**
 
-`os.path.join("/app", "/etc/passwd")` が実行されるとします．
-Pythonの仕様上，2つ目の引数が絶対パスである場合，それ以前のパス (`/app`) は破棄され，結果は `/etc/passwd` になります． 
+`os.path.join("/app", "/A")` が実行されるとします．
+Pythonの仕様上，2つ目の引数が絶対パスである場合，それ以前のパス (`/app`) は破棄され，結果は `/A` になります． 
 これにより，`..` を一切使わずにパストラバーサルが成立します．
+
+### Exploitation
 
 ```shell
 $ nc <ip> <port>
@@ -75,3 +77,5 @@ $ cat /app//flag.txt
   2つ目の引数が絶対パスである場合，それ以前のパスは破棄され，結果は2つ目の引数のパスになります． 
 
 ## References
+
+- [os.path --- 一般的なパス名操作 — Python 3.14.5 ドキュメント](https://docs.python.org/ja/3/library/os.path.html#os.path.join)
