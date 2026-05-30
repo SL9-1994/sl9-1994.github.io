@@ -35,9 +35,9 @@ C2サーバのソースコードを見つけるための調査を行います．
 2つ気になるものを見つけました．
 
 1. `2176 7zFM.exe "C:\Program Files\7-Zip\7zFM.exe" "C:\Users\IEUser\Documents\backup_development.zip"`
-   **根拠**: 既存のファイルではないため，対象のソースコードの可能性
+   - **根拠**: 既存のファイルではないため，対象のソースコードの可能性
 2. `2128 TrueCrypt.exe "C:\Program Files\TrueCrypt\TrueCrypt.exe"`
-   **根拠**: **TrueSecrets** というチャレンジ名と近いため，関連性がある可能性
+   - **根拠**: **TrueSecrets** というチャレンジ名と近いため，関連性がある可能性
 
 ```shell
 $ vol -f TrueSecrets.raw windows.cmdline
@@ -222,7 +222,7 @@ class AgentServer {
 	- `Input`: Raw
 	- `Output`: Raw
 
-```txt
+```
 wENDQtzYcL3CKv0lnnJ4hk0JYvJVBMwTj7a4Plq8h68=
 M35jHmvkY9WGlWdXo0ByOJrYhHmtC8O0hn+gLHaClb4QbACeOoSiYA==
 hufGZi+isAzspq9AOs+sI/u+AS/aWPrAYd+mctDo7qEt+SpW2sELvSaxx6RRdK3vDavTsziAtb4/iCZ72v3QGh78yhY2KXZFu8qAcYdN7ltOOlg1LSrdkhjgr+CWTlvWh7A8IS7NwwI=
