@@ -1,0 +1,26 @@
+---
+
+---
+
+@use 'main';
+
+/* 本文と見出し全体のフォントを等幅・読みやすいゴシックに固定 */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    'Yu Gothic UI', 'Yu Gothic', Meiryo, sans-serif !important;
+}
+
+/* コードブロックのフォント (等幅) */
+code,
+pre {
+  font-family:
+    'JetBrains Mono', 'Myrica M', 'SFMono-Regular', Menlo, Consolas, monospace !important;
+}

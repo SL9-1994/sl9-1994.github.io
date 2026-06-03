@@ -30,6 +30,13 @@ latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so tha
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
 **run server**: bundle exec jekyll serve -> `nix-shell`
+```
+$ nix-shell -p bundler bundix
+$ bundle install
+
+$ bundle exec jekyll clean
+$ bundle exec jekyll s
+```
 
 ## Contributing
 
