@@ -1,8 +1,7 @@
 ---
-
 ---
-
-@use 'main';
+/* prettier-ignore */
+@use 'main{%- if jekyll.environment == 'production' -%}.bundle{%- endif -%}';
 
 /* 本文と見出し全体のフォントを等幅・読みやすいゴシックに固定 */
 html,
