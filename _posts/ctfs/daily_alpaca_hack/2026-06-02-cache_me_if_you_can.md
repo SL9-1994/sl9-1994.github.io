@@ -1,6 +1,6 @@
 ---
 title: FEAT:🚩 Daily-AlpacaHack 「Cache Me If You Can」Easy
-description: コーディングミスと反射型XSS
+description: リバースプロキシ キャッシュ機構バイパス
 date: 2026-06-03 12:37:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [daily_alpaca_hack, web, vuln/reflected_xss, linux]
