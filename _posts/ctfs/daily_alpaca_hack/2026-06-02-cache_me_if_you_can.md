@@ -3,7 +3,7 @@ title: FEAT:🚩 Daily-AlpacaHack 「Cache Me If You Can」Easy
 description: リバースプロキシ キャッシュ機構バイパス
 date: 2026-06-03 12:37:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [daily_alpaca_hack, web, vuln/reflected_xss, linux]
+tags: [daily_alpaca_hack, web, vuln/web_cache_bypass, linux]
 ---
 
 # 20260602-daily-web-easy-Cache_Me_If_You_Can
@@ -17,7 +17,6 @@ tags: [daily_alpaca_hack, web, vuln/reflected_xss, linux]
 > - **Tools & TechStack**:
 > 	- Python (Flask)
 > 	- Nginx
-> - **Keyword**: Web_Cache_Bypass
 > - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 

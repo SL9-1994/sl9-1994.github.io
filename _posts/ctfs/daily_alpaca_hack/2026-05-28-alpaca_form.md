@@ -11,7 +11,6 @@ tags: [daily_alpaca_hack, rev, vuln/hardcoded_credentials, windows, dotnet]
 > - **Category**: Rev
 > - **Description**: "この問題はLinux環境だけでも解けます。"
 > - **Tech Stack**: CSharp, .Net
-> - **Keyword**: Hardcoded_Credentials
 > - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 

@@ -11,7 +11,6 @@ tags: [daily_alpaca_hack, web, vuln/xss]
 > - **Category**: web
 > - **Description**: こんにちは！
 > - **Tech Stack**: Python, JavaScript
-> - **Keyword**: CSP, Reflected_XSS
 > - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 

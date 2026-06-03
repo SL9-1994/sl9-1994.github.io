@@ -20,7 +20,6 @@ tags: [daily_alpaca_hack, pwn, vuln/stack_based_use_after_free, linux]
 > 	- Pwntools
 > 	- Checksec
 > 	- gdb (pwndbg)
-> - **Keyword**: スタック領域における **Use-After-Free**
 > - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 

@@ -12,7 +12,6 @@ tags: [daily_alpaca_hack, linux, pwn]
 > - **Description**: アルパカ関数ポインタの配列 🦙🦙🦙🦙🦙
 > - **Keyword**: `Out-of-Bounds Read`
 > - **Tech Stack**: C, nasm
-> - **Release**: 2025-05-06
 > - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
