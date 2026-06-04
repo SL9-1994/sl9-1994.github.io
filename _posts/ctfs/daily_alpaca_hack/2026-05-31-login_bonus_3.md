@@ -20,7 +20,6 @@ tags: [daily_alpaca_hack, pwn, vuln/stack_based_use_after_free, linux]
 > 	- Pwntools
 > 	- Checksec
 > 	- gdb (pwndbg)
-> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**

@@ -1,5 +1,6 @@
 ---
 ---
+
 /* prettier-ignore */
 @use 'main{%- if jekyll.environment == 'production' -%}.bundle{%- endif -%}';
 
@@ -11,7 +12,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-family:
     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
     'Yu Gothic UI', 'Yu Gothic', Meiryo, sans-serif !important;

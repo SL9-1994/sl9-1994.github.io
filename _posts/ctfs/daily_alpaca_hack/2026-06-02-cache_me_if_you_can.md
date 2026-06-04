@@ -17,7 +17,6 @@ tags: [daily_alpaca_hack, web, vuln/web_cache_bypass, linux]
 > - **Tools & TechStack**:
 > 	- Python (Flask)
 > 	- Nginx
-> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**

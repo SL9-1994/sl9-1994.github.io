@@ -11,7 +11,6 @@ tags: [daily_alpaca_hack, web, vuln/xss]
 > - **Category**: web
 > - **Description**: こんにちは！
 > - **Tech Stack**: Python, JavaScript
-> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**

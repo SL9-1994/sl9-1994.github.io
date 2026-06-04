@@ -13,7 +13,6 @@ tags: [daily_alpaca_hack, web, vuln/reflected_xss, linux]
 > - **Description**: 間違ってコピペしちゃったけど、すぐ消したから大丈夫！
 > - **Tech Stack**: Javascript, Puppeteer
 > - **Keyword**: Reflected_XSS, Clipboard, Admin Bot
-> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**

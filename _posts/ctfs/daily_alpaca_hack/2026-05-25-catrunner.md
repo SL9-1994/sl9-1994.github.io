@@ -11,7 +11,6 @@ tags: [daily_alpaca_hack, linux, misc]
 > - **Category**: misc
 > - **Description**: Path Traversal
 > - **Tech Stack**: Python
-> - **Flag**: `{*** REDACTED ***}`
 {: .prompt-info }
 
 **階層構造**
