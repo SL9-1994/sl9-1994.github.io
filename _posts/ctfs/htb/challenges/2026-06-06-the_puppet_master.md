@@ -3,7 +3,7 @@ title: FEAT:🚩 HTB 「The Puppet Master」VeryEasy
 description: 
 date: 2026-06-06 22:02:00 +0900
 categories: [CyberSecurity, CTF]
-tags: [daily_alpaca_hack, osint]
+tags: [hack_the_box, osint]
 math: true
 ---
 
