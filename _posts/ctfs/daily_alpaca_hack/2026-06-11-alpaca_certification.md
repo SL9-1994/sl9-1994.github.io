@@ -38,7 +38,7 @@ tags: [daily_alpaca_hack, web, vuln/hardcoded_credentials]
 
 素直に，`index.html` に記載されているヒントに従い，`openssl.conf` を見ます．
 
-`nginx/index.htmll`
+`nginx/index.html`
 ```html
 <!doctype html>
 <!-- This file is fully slopped by LLM, and totally unrelated this challenge -->
@@ -59,7 +59,7 @@ tags: [daily_alpaca_hack, web, vuln/hardcoded_credentials]
 また，`[ v3_req ]` における設定で，**Custom OID**[^1] が設定されており，UTF8文字列として，**Flag** が埋め込まれています．
 
 `nginx/openssl.conf`
-```toml
+```ini
 [ req ]
 distinguished_name = dn # DN定義
 x509_extensions = v3_req # X.509 v3 拡張を有効化
