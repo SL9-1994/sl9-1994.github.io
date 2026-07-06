@@ -12,7 +12,6 @@ tags: [daily_alpaca_hack, web, vuln/sql_injection]
 
 本問は，SQL Injection に関する問題です．
 
-> [!info] Challenge Info
 > - **Category**: Web
 > - **Description**: これまで以上に安全です！
 > - **Tools & TechStack**:
