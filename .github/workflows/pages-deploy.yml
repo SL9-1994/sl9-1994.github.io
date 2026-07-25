@@ -9,6 +9,11 @@ on:
       - README.md
       - LICENSE
 
+  # 定期実行
+  schedule:
+    # 毎日 JST 午前 1:00 (UTC 16:00) に実行
+    - cron: '0 16 * * *'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
