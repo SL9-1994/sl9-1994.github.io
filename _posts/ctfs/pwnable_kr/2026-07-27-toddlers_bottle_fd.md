@@ -1,6 +1,6 @@
 ---
 title: FEAT:🚩 Pwnable.kr 「fd (Toddler's Bottle)」
-description: file discriptor の理解を試すpwn問題
+description: file descriptor の理解を試すpwn問題
 date: 2026-07-27 22:34:00 +0900
 categories: [CyberSecurity, CTF]
 tags: [pwnable_kr, toddlers_bottle, pwn]
@@ -10,7 +10,7 @@ tags: [pwnable_kr, toddlers_bottle, pwn]
 
 ## Summary
 
-本問は，**file discriptor** の理解を試すpwn問題です．
+本問は，**file descriptor** の理解を試すpwn問題です．
 
 > - **Category**: Pwn
 > - **Description**: Mommy! what is a file descriptor in Linux?
@@ -36,7 +36,7 @@ tags: [pwnable_kr, toddlers_bottle, pwn]
 メインの操作を抜き出すと，大まかに以下の処理で構成されています．
 
 - `buf[32]` で 32byte の文字列型の配列を用意する．
-- `atoi(argv[1])` でコマンドライン引数で入力された **Ascii文字列を整数に変換** し，そこから `0x1234 = 4660` を減算したものを，**fd (file discriptor)** として設定する．
+- `atoi(argv[1])` でコマンドライン引数で入力された **Ascii文字列を整数に変換** し，そこから `0x1234 = 4660` を減算したものを，**fd (file descriptor)** として設定する．
 - `read(fd, buf, 32)` で，`fd` に応じた入力で，`buf[]` に書き込まれる．
 - `buf[]` 内の文字列が，`"LETMEWIN\n"` と一致すれば，`cat flag` される．
 
