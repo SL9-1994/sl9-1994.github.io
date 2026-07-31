@@ -134,11 +134,23 @@ $$
 \frac{p-1}{2} = \frac{(4k + 3) - 1}{2} = \frac{4k + 2}{2} = 2k + 1\tag{4}
 $$
 
+そのため，前半と後半の部分で，それぞれルシャンドル記号が計算され，$-1 \times 1 = -1$ となります．
+
+```python
+# -1
+>>> pow(-1, (1007621497415251 - 1) // 2, 1007621497415251)
+1007621497415250
+
+# 1
+>>> pow(1, (1007621497415251 - 1) // 2, 1007621497415251)
+1
+```
+
 ### ソルバを書く
 
 `solver.py`
 ```python
-ENCRYPTED_FLAG = [67594220461269, 501237540280788] # 省略
+ENCRYPTED_FLAG = [] # 省略
 A = 288260533169915
 P = 1007621497415251
 
@@ -148,10 +160,11 @@ def decrypt_flag(encrypted):
     for enc in encrypted:
         # ルシャンドル記号を計算
         legendre = pow(enc, (P - 1) // 2, P)
-
+        print(f"Legendre symbol: {legendre}")
         if legendre == 1:
             flag += str(1)
         else:
+            # モジュロ演算の世界における -1 = (P - 1)
             flag += str(0)
 
     return "".join([chr(int(flag[i : i + 8], 2)) for i in range(0, len(flag), 8)])
