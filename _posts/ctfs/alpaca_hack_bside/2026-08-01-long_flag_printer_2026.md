@@ -13,7 +13,6 @@ math: true
 
 本問は，コンテナの設定と通信のキープ処理を利用するMisc問題です．
 
-> [!info] Challenge Info
 > - **Category**: Misc
 > - **Description**: おかげさまで [Flag Printer 2026](https://alpacahack.com/daily/challenges/flag-printer-2026) のフラグが長くなりました
 > - **Tools & TechStack**:
