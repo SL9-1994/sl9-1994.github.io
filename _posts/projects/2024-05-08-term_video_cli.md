@@ -2,33 +2,26 @@
 title: FEAT:✨ 「Term Video CLI」
 description: Asciiアニメーション ターミナル描画ツール
 date: 2024-05-08 12:00:00 +0900
+last_modified_at: 2026-08-07 22:06:00 +0900
 categories: [Development]
 tags: [rust, ffmpeg, cli]
 image:
-  path: /assets/img/project_placeholder_ai.png
-  alt: project_placeholder
+  path: /assets/img/project_icon/term_video_cli_icon.png
+  alt: term_video_cli_icon
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/82GU84CVCsI?si=H1OQ2AUKLZ-_C-eI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-fAEu1D2woU?si=zQWcM0CPVWXB0W5G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # TermVideoCli
 
 - TermVideoCli は任意の動画ファイルを読み込み，ターミナルへ Ascii アニメーション表示することのできる CLI です．
 
-#### [Youtube demo](https://www.youtube.com/watch?v=82GU84CVCsI)
+#### [Youtube demo](https://youtu.be/-fAEu1D2woU)
 
 ## Tech Info
 
 - 開発期間: 4 日
 - 言語: Rust
-
-| Crate     | Version |
-| :---------: | :-------: |
-| image     | 0.25.1  |
-| term_size | 0.3.2   |
-| tokio     | 1.37.0  |
-| FFmpeg    | 4.4.2   |
-| clap      | 4.5.4   |
 
 ### 機能
 
@@ -48,7 +41,7 @@ FFmpeg の Rust 用 Wrapper Crate を使用しようと思ったのですが，B
 24FPS 処理のため，3 分 40 秒の動画で 220s\*24f で 5200 枚程度の画像が生成される事になり，
 ターミナルサイズが大きいほど解像度が高くなるため，綺麗に描画したい場合は，より容量が必要になります．
 
-## Status
+## ステータス
 
 > completed
 
