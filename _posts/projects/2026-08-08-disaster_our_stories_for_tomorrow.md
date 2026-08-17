@@ -7,7 +7,7 @@ categories: [Development]
 tags: [typescript, web, supabase, react]
 image:
   path: /assets/img/project_icon/our_stories_for_tomorrow_ogp.png
-  alt: project_placeholder
+  alt: our_stories_for_tomorrow_icon
 ---
 
 # 被災体験アーカイブス (Our Stories for Tomorrow)
@@ -65,7 +65,7 @@ image:
 
 ## ライセンスとクレジット
 
-- 本リポジトリのソースコードは [MIT License](LICENSE) です
+- 本リポジトリのソースコードは [MIT License] です
 - 投稿された写真の利用条件は投稿者が選択します (転載禁止 / CC BY 4.0 / CC BY-SA 4.0 / CC BY-NC 4.0 / CC0 1.0)
 - 市区町村と代表点のデータ (`src/municipalities.ts`) は [Geolonia 住所データ](https://github.com/geolonia/japanese-addresses) (CC BY 4.0) を加工して作成しています
 - 同梱フォント: Zen Kaku Gothic New / Shippori Mincho B1 / JetBrains Mono (いずれも SIL Open Font License)
