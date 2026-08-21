@@ -60,13 +60,14 @@ order: 4
 
 ## _SNS_
 
+- [X](https://x.com/SL91994)
 - [Bluesky](https://bsky.app/profile/rusty-core.bsky.social)
 - [Github](https://github.com/SL9-1994)
 - [Youtube](https://www.youtube.com/@x0rbyt3)
 
 ## _Finally_
 
-Bluesky に来てくれれば何か反応します．  
+X に来てもらえれば何か反応します．  
 また，このブログでは料理，コンピュータサイエンス，イラスト，モデリング，学術記事，Mod 開発等なんでも投稿します．
 
 > 思い知るがいい！三角定規たちの肝臓を！

@@ -14,32 +14,32 @@ timezone: Asia/Tokyo
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: SL9-1994's blog
+title: SL91994's blog
 
 tagline: 1'M JU57 4 H088Y157C411 M3 4 5Cr1P7 K1DD13 1F Y0U W1114ND 1 H4V3 4 HU63 50F7 5P07 F0r C0M37 5H03M4K3-r13VY 9. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  SL9-1994's blog using Jekyll chirpy theme.
+  SL91994's blog using Jekyll chirpy theme.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://blog.sl91994.com"
 
 github:
-  username: SL9-1994
+  username: SL91994
 
 twitter:
   username: none
 
 social:
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: SL9-1994
+  name: SL91994
   email: none@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    - https://x.com/SL91994
     - https://bsky.app/profile/rusty-core.bsky.social
     - https://github.com/SL9-1994
-    # - https://twitter.com/username
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
