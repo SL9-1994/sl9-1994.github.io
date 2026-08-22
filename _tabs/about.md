@@ -6,13 +6,9 @@ order: 4
 
 # _Hi !_
 
-**_SL9-1994_** です．名前の由来は，**Comet Shoemaker–Levy 9** からです．  
+**_SL91994_** です．名前の由来は，**Comet Shoemaker–Levy 9** からです．  
 技術力は皆無ですが，普段は **Rust** で，CLI・GUI，Web，便利ツール開発等を行ったり，隔離環境でマルウェア動かして遊んでます．<br>
 あと料理，イラストとか．
-
-- **HackTheBox**: `Hacker`
-- **TryHackMe**: `Hacker`
-- **GHSA PVR**: `3`
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5PTmo9zbG00?si=9-uwGhp7hxJXfNLy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -20,7 +16,7 @@ order: 4
 
 - Programming
   - main: Rust
-  - sub: GAS, JS, Python, C
+  - sub: JS, Python, C, Java
 - Cyber security
   - Capture The Flag (rev, pwn, web)
   - Malware analysis (PE)
@@ -30,29 +26,26 @@ order: 4
 - Minecraft Modding
 - Illustration
 
-## _Favorite_
+## _InfoSec_
 
-- 平沢進 & P-Model
-- ヨルシカ
-- Faketype
-- 花譜 (V.W.P)
-- ポッキー
-- ボカロ
+- **HackTheBox:** `Hacker`
+- **TryHackMe:** `Hacker`
+
+- **Vulnerability Report:**
+  - **UnderFlow-DoS:** `1`
+  - **Path-Traversal:** `1`
+  - **Stored-XSS:** `3`
+  - **Arbitrary-file-write:** `2`
 
 ## _Favorite pieces_
 
-- Biohazard
-- MetalGearSolid
-- CorpseParty
-- Siren
-- Fallout
-- Minecraft
-- ウマ娘
-- 銀河特急 ミルキー☆サブウェイ
-- 地獄先生ぬ～べ～
-- 進撃の巨人
-- 獣の奏者エリン
-- めがみめぐり
+| ゲーム         | アニメ           | 曲 / アーティスト | その他       |
+| -------------- | ---------------- | ----------------- | ------------ |
+| Biohazard      | ウマ娘           | 平沢進 & P-Model  | カフカの変身 |
+| MetalGearSolid | 地獄先生ぬ～べ～ | ヨルシカ          | -            |
+| CorpseParty    | 進撃の巨人       | Faketype          | -            |
+| Fallout        | 獣の奏者エリン   | 花譜 (V.W.P)      | -            |
+| Minecraft      | めがみめぐり     | -                 | -            |
 
 ## _Certification_
 
